@@ -1,9 +1,10 @@
 // jump.cpp -- using continue and break
 #include <iostream>
+using namespace std;
+
 const int ArSize = 80;
 int main()
 {
-    using namespace std;
     char line[ArSize];
     int spaces = 0; 
 
@@ -22,7 +23,7 @@ int main()
     }
     cout << "\n" << spaces << " spaces\n";
     cout << "Done.\n";
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0;
 }

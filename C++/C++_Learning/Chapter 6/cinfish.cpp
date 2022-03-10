@@ -1,9 +1,10 @@
 // cinfish.cpp -- non-numeric input terminates loop
 #include <iostream>
+using namespace std;
+
 const int Max = 5;
 int main()
 {
-    using namespace std;
 // get data
     double fish[Max];
     cout << "Please enter the weights of your fish.\n";
@@ -32,7 +33,7 @@ int main()
 //	    cin.clear();  // reset input
 //	    cin.get();    // read q
 //	}
-//	cin.get();    // read end of line after last input
-//	cin.get();    // wait for user to press <Enter>
+
+    system("pause");
     return 0; 
 }

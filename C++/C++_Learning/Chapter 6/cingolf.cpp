@@ -1,9 +1,10 @@
 // cingolf.cpp -- non-numeric input skipped
 #include <iostream>
+using namespace std;
+
 const int Max = 5;
 int main()
 {
-    using namespace std;
 // get data
     int golf[Max];
     cout << "Please enter your golf scores.\n";
@@ -26,7 +27,7 @@ int main()
 // report results
     cout << total / Max << " = average score "
             << Max << " rounds\n";
-    // cin.get();
-    // cin.get();
+    
+    system("pause");
     return 0; 
 }

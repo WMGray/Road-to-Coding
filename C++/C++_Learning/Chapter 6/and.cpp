@@ -1,9 +1,10 @@
 // and.cpp -- using the logical AND operator
 #include <iostream>
+using namespace std;
+
 const int ArSize = 6;
 int main()
 {
-    using namespace std;
     float naaq[ArSize];
     cout << "Enter the NAAQs (New Age Awareness Quotients) "
          << "of\nyour neighbors. Program terminates "
@@ -39,7 +40,7 @@ int main()
         cout << " of your neighbors have greater awareness of\n"
              << "the New Age than you do.\n";
     }
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0; 
 }

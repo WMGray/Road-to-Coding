@@ -1,11 +1,10 @@
 // outfile.cpp -- writing to a file
 #include <iostream>
 #include <fstream>                  // for file I/O
+using namespace std;
 
 int main()
 {
-    using namespace std;
-
     char automobile[50];
     int year;
     double a_price;
@@ -43,7 +42,7 @@ int main()
     outFile << "Now asking $" << d_price << endl;
     
     outFile.close();                // done with file
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0;
 }

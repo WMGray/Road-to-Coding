@@ -1,8 +1,9 @@
 // or.cpp -- using the logical OR operator
 #include <iostream>
+using namespace std;
+
 int main()
 {
-    using namespace std;
     cout << "This program may reformat your hard disk\n"
             "and destroy all your data.\n"
             "Do you wish to continue? <y/n> ";
@@ -16,7 +17,6 @@ int main()
         cout << "That wasn't a y or n! Apparently you "
                 "can't follow\ninstructions, so "
                 "I'll trash your disk anyway.\a\a\a\n";
-	// cin.get();
-	// cin.get();
+    system("pause");
     return 0;
 }

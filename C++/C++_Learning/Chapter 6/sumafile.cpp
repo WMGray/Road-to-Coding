@@ -2,10 +2,11 @@
 #include <iostream>
 #include <fstream>          // file I/O support
 #include <cstdlib>          // support for exit()
+using namespace std;
+
 const int SIZE = 60;
 int main()
 {
-    using namespace std;
     char filename[SIZE];
     ifstream inFile;        // object for handling file input
 
@@ -45,6 +46,7 @@ int main()
         cout << "Average: " << sum / count << endl;
     }
     inFile.close();         // finished with the file
-    // cin.get();
+    
+    system("pause");
     return 0;
 }

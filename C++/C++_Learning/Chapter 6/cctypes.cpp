@@ -1,9 +1,10 @@
 // cctypes.cpp -- using the ctype.h library
 #include <iostream>
 #include <cctype>              // prototypes for character functions
+using namespace std;
+
 int main()
 {
-    using namespace std;
     cout << "Enter text for analysis, and type @"
             " to terminate input.\n";
     char ch;  
@@ -33,7 +34,7 @@ int main()
          << digits << " digits, "
          << punct << " punctuations, "
          << others << " others.\n";
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0; 
 }

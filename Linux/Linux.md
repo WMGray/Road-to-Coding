@@ -2,7 +2,7 @@
 
 1. 开源许可证
 
-   ​	![开源许可证](C:\Users\14667\Desktop\Linux_Learning\images\开源许可证的选择流程图.png)
+   ​	![开源许可证](./images/开源许可证的选择流程图.png)
 
 2. 开源软件4大关键性优势：
 

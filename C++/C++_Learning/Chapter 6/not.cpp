@@ -1,10 +1,11 @@
 // not.cpp -- using the not operator
 #include <iostream>
 #include <climits>
+using namespace std;
+
 bool is_int(double); 
 int main()
 {
-    using namespace std;
     double num;
 
     cout << "Yo, dude! Enter an integer value: ";
@@ -16,8 +17,8 @@ int main()
     }
     int val = int (num);    // type cast
     cout << "You've entered the integer " << val << "\nBye\n";
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0;
 }
 

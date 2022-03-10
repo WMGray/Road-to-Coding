@@ -1,5 +1,7 @@
 // more_and.cpp -- using the logical AND operator
 #include <iostream>
+using namespace std;
+
 const char * qualify[4] =       // an array of pointers*/
 {                               // to strings
     "10,000-meter race.\n",
@@ -9,7 +11,6 @@ const char * qualify[4] =       // an array of pointers*/
 };
 int main()
 {
-    using namespace std;
     int age;
     cout << "Enter your age in years: ";
     cin >> age;
@@ -25,7 +26,7 @@ int main()
         index = 3;
 
     cout << "You qualify for the " << qualify[index]; 
-    // cin.get();
-    // cin.get();
+    
+    system("pause");
     return 0;
 }

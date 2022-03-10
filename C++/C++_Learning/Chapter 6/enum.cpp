@@ -1,11 +1,12 @@
 // enum.cpp -- using enum
 #include <iostream>
+using namespace std;
+
 // create named constants for 0 - 6
 enum {red, orange, yellow, green, blue, violet, indigo};
 
 int main()
 {
-    using namespace std;
     cout << "Enter color code (0-6): ";
     int code;
     cin >> code;
@@ -25,7 +26,7 @@ int main()
         cin >> code;
     }
     cout << "Bye\n";
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0; 
 }
