@@ -1,15 +1,16 @@
 // calling.cpp -- defining, prototyping, and calling a function
 #include <iostream>
+using namespace std;
 
 void simple();    // function prototype
 
 int main()
 {
-    using namespace std;
     cout << "main() will call the simple() function:\n";
     simple();     // function call
-	cout << "main() is finished with the simple() function.\n";
-    // cin.get();
+	  cout << "main() is finished with the simple() function.\n";
+    
+    system("pause");
     return 0;
 }
 

@@ -1,5 +1,7 @@
 // arrfun3.cpp -- array functions and const
 #include <iostream>
+using namespace std;
+
 const int Max = 5;
 
 // function prototypes
@@ -9,7 +11,6 @@ void revalue(double r, double ar[], int n);
 
 int main()
 {
-    using namespace std;
     double properties[Max];
 
     int size = fill_array(properties, Max);
@@ -29,8 +30,8 @@ int main()
         show_array(properties, size);
     }
     cout << "Done.\n";
-    // cin.get();
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 

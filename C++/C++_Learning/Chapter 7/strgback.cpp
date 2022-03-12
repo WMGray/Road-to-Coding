@@ -1,9 +1,10 @@
 // strgback.cpp -- a function that returns a pointer to char
 #include <iostream>
+using namespace std;
+
 char * buildstr(char c, int n);     // prototype
 int main()
 {
-    using namespace std;
     int times;
     char ch;
 
@@ -17,8 +18,8 @@ int main()
     ps = buildstr('+', 20);         // reuse pointer
     cout << ps << "-DONE-" << ps << endl;
     delete [] ps;                   // free memory
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0;
 }
 

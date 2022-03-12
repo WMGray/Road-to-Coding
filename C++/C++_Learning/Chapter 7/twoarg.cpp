@@ -1,6 +1,7 @@
 // twoarg.cpp -- a function with 2 arguments
 #include <iostream>
 using namespace std;
+
 void n_chars(char, int);
 int main()
 {
@@ -20,8 +21,8 @@ int main()
     }
     cout << "The value of times is " << times << ".\n";
     cout << "Bye\n";
-    // cin.get();
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 
