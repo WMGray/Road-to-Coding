@@ -1,5 +1,7 @@
 // arfupt.cpp -- an array of function pointers
 #include <iostream>
+using namespace std;
+
 // various notations, same signatures
 const double * f1(const double ar[], int n);
 const double * f2(const double [], int);
@@ -7,7 +9,6 @@ const double * f3(const double *, int);
 
 int main()
 {
-    using namespace std;
     double av[3] = {1112.3, 1542.6, 2227.9};
 
     // pointer to a function
@@ -47,7 +48,8 @@ int main()
     cout << pdb << ": " << *pdb << endl;
     // alternative notation
     cout << (*(*pd)[2])(av,3) << ": " << *(*(*pd)[2])(av,3) << endl;
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 

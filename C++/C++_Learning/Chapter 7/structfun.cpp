@@ -1,6 +1,7 @@
 // strctfun.cpp -- functions with a structure argument
 #include <iostream>
 #include <cmath>
+using namespace std;
 
 // structure declarations
 struct polar
@@ -20,7 +21,6 @@ void show_polar(polar dapos);
 
 int main()
 {
-    using namespace std;
     rect rplace;
     polar pplace;
 
@@ -32,13 +32,14 @@ int main()
         cout << "Next two numbers (q to quit): ";
     }
     cout << "Done.\n";
+
+    system("pause");
     return 0;
 }
 
 // convert rectangular to polar coordinates
 polar rect_to_polar(rect xypos)
 {
-    using namespace std;
     polar answer;
 
     answer.distance =
@@ -50,7 +51,6 @@ polar rect_to_polar(rect xypos)
 // show polar coordinates, converting angle to degrees
 void show_polar (polar dapos)
 {
-    using namespace std;
     const double Rad_to_deg = 57.29577951;
 
     cout << "distance = " << dapos.distance;

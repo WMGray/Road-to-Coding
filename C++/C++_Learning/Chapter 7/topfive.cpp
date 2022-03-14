@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 const int SIZE = 5;
 void display(const string sa[], int n);
 int main()
@@ -16,9 +17,9 @@ int main()
 
     cout << "Your list:\n";
     display(list, SIZE);
-    // cin.get();
 
-	return 0; 
+    system("pause");
+	  return 0;   
 }
 
 void display(const string sa[], int n)

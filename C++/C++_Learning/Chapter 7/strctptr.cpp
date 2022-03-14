@@ -1,6 +1,7 @@
 // strctptr.cpp -- functions with pointer to structure arguments
 #include <iostream>
 #include <cmath>
+using namespace std;
 
 // structure templates
 struct polar
@@ -20,7 +21,6 @@ void show_polar (const polar * pda);
 
 int main()
 {
-    using namespace std;
     rect rplace;
     polar pplace;
 
@@ -32,13 +32,14 @@ int main()
         cout << "Next two numbers (q to quit): ";
     }
     cout << "Done.\n";
+
+    system("pause");
     return 0;
 }
 
 // show polar coordinates, converting angle to degrees
 void show_polar (const polar * pda)
 {
-    using namespace std;
     const double Rad_to_deg = 57.29577951;
 
     cout << "distance = " << pda->distance;
@@ -49,7 +50,6 @@ void show_polar (const polar * pda)
 // convert rectangular to polar coordinates
 void rect_to_polar(const rect * pxy, polar * pda)
 {
-    using namespace std;
     pda->distance =
         sqrt(pxy->x * pxy->x + pxy->y * pxy->y);
     pda->angle = atan2(pxy->y, pxy->x); 

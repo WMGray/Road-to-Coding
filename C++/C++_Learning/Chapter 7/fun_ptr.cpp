@@ -1,5 +1,7 @@
 // fun_ptr.cpp -- pointers to functions
 #include <iostream>
+using namespace std;
+
 double betsy(int);
 double pam(int);
 
@@ -9,7 +11,6 @@ void estimate(int lines, double (*pf)(int));
 
 int main()
 {
-    using namespace std;
     int code;
 
     cout << "How many lines of code do you need? ";
@@ -18,8 +19,8 @@ int main()
     estimate(code, betsy);
     cout << "Here's Pam's estimate:\n";
     estimate(code, pam);
-    // cin.get();
-    // cin.get();
+
+    system("pause");
     return 0;
 }
 

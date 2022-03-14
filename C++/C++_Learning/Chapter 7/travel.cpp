@@ -1,5 +1,7 @@
 // travel.cpp -- using structures with functions
 #include <iostream>
+using namespace std;
+
 struct travel_time
 {
     int hours;
@@ -12,7 +14,6 @@ void show_time(travel_time t);
 
 int main()
 {
-    using namespace std;
     travel_time day1 = {5, 45};    // 5 hrs, 45 min
     travel_time day2 = {4, 55};    // 4 hrs, 55 min
 
@@ -23,8 +24,8 @@ int main()
     travel_time day3= {4, 32};
     cout << "Three-day total: ";
     show_time(sum(trip, day3));
-    // cin.get();
 
+    system("pause");
     return 0;
 }
 
@@ -40,7 +41,6 @@ travel_time sum(travel_time t1, travel_time t2)
 
 void show_time(travel_time t)
 {
-    using namespace std;
     cout << t.hours << " hours, "
          << t.mins << " minutes\n";
 }
