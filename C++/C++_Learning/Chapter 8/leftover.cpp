@@ -1,11 +1,12 @@
 // leftover.cpp -- overloading the left() function
 #include <iostream>
+using namespace std;
+
 unsigned long left(unsigned long num, unsigned ct);
 char * left(const char * str, int n = 1);
 
 int main()
 {
-     using namespace std;
     char * trip = "Hawaii!!";   // test value
     unsigned long n = 12345678; // test value
     int i;
@@ -18,7 +19,8 @@ int main()
         cout << temp << endl;
         delete [] temp; // point to temporary storage
     }
-    // cin.get();
+
+    system("pause");
     return 0;
 
 }

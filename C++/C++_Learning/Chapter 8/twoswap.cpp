@@ -1,5 +1,7 @@
 // twoswap.cpp -- specialization overrides a template
 #include <iostream>
+using namespace std;
+
 template <typename T>
 void Swap(T &a, T &b);
 
@@ -16,7 +18,6 @@ void Show(job &j);
 
 int main()
 {
-    using namespace std;
     cout.precision(2);
     cout.setf(ios::fixed, ios::floatfield);
     int i = 10, j = 20;
@@ -34,7 +35,8 @@ int main()
     cout << "After job swapping:\n";
     Show(sue);
     Show(sidney);
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 
@@ -63,7 +65,6 @@ template <> void Swap<job>(job &j1, job &j2)  // specialization
 
 void Show(job &j)
 {
-    using namespace std;
     cout << j.name << ": $" << j.salary
          << " on floor " << j.floor << endl;
 }

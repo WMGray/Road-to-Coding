@@ -31,8 +31,8 @@ int main()
     file_it(fout, objective, eps, LIMIT);
     file_it(cout, objective, eps, LIMIT);
     cout << "Done\n";
-    // cin.get();
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 

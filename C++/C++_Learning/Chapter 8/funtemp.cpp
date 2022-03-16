@@ -1,12 +1,13 @@
 // funtemp.cpp -- using a function template
 #include <iostream>
+using namespace std;
+
 // function template prototype
 template <typename T>  // or class T
 void Swap(T &a, T &b);
 
 int main()
 {
-    using namespace std;
     int i = 10;
     int j = 20;
     cout << "i, j = " << i << ", " << j << ".\n";
@@ -20,7 +21,8 @@ int main()
     cout << "Using compiler-generated double swapper:\n";
     Swap(x,y);  // generates void Swap(double &, double &)
     cout << "Now x, y = " << x << ", " << y << ".\n";
-    // cin.get();
+
+    system("pause");
     return 0;
 }
 

@@ -1,5 +1,6 @@
 // choices.cpp -- choosing a template
 #include <iostream>
+using namespace std;
 
 template<class T>
 T lesser(T a, T b)         // #1
@@ -16,7 +17,6 @@ int lesser (int a, int b)  // #2
 
 int main()
 {
-    using namespace std;
     int m = 20;
     int n = -30;
     double x = 15.5;
@@ -27,6 +27,6 @@ int main()
     cout << lesser<>(m, n) << endl;     // use #1 with int
     cout << lesser<int>(x, y)  << endl; // use #1 with int
 
-    // cin.get();
+    system("pause");
     return 0;
 }

@@ -1,5 +1,6 @@
 // tempover.cpp --- template overloading
 #include <iostream>
+using namespace std;
 
 template <typename T>            // template A
 void ShowArray(T arr[], int n);
@@ -15,7 +16,6 @@ struct debts
 
 int main()
 {
-    using namespace std;
     int things[6] = {13, 31, 103, 301, 310, 130};
     struct debts mr_E[3] =
     {
@@ -35,14 +35,14 @@ int main()
     cout << "Listing Mr. E's debts:\n";
 // pd is an array of pointers to double
     ShowArray(pd, 3);      // uses template B (more specialized)
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 
 template <typename T>
 void ShowArray(T arr[], int n)
 {
-    using namespace std;
     cout << "template A\n";
     for (int i = 0; i < n; i++)
         cout << arr[i] << ' ';
@@ -52,7 +52,6 @@ void ShowArray(T arr[], int n)
 template <typename T>
 void ShowArray(T * arr[], int n)
 {
-    using namespace std;
     cout << "template B\n";
     for (int i = 0; i < n; i++)
         cout << *arr[i] << ' ';

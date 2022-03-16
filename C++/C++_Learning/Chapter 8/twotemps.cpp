@@ -1,5 +1,7 @@
 // twotemps.cpp -- using overloaded template functions
 #include <iostream>
+using namespace std;
+
 template <typename T>     // original template
 void Swap(T &a, T &b);
 
@@ -10,7 +12,6 @@ void Show(int a[]);
 const int Lim = 8;
 int main()
 {
-    using namespace std;
     int i = 10, j = 20;
     cout << "i, j = " << i << ", " << j << ".\n";
     cout << "Using compiler-generated int swapper:\n";
@@ -26,7 +27,8 @@ int main()
     cout << "Swapped arrays:\n";
     Show(d1);
     Show(d2);
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 
@@ -53,7 +55,6 @@ void Swap(T a[], T b[], int n)
 
 void Show(int a[])
 {
-    using namespace std;
     cout << a[0] << a[1] << "/";
     cout << a[2] << a[3] << "/";
     for (int i = 4; i < Lim; i++)
