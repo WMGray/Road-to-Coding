@@ -28,7 +28,8 @@ int main()
     cout << "Looper: " << looper.used << " use(s)\n";
     cout << "Copycat: " << copycat.used << " use(s)\n";
     cout << "use(looper): " << use(looper).used << " use(s)\n";
-    // cin.get();
+    
+    system("pause");
     return 0;
 }
 
