@@ -1,9 +1,11 @@
 //strc_ref.cpp -- using structure references
 #include <iostream>
 #include <string>
+using namespace std;
+
 struct free_throws
 {
-    std::string name;
+    string name;
     int made;
     int attempts;
     float percent;
@@ -32,22 +34,22 @@ int main()
     display(team);
 // use return value in assignment
     dup = accumulate(team,five);
-    std::cout << "Displaying team:\n";
+    cout << "Displaying team:\n";
     display(team);
-    std::cout << "Displaying dup after assignment:\n";
+    cout << "Displaying dup after assignment:\n";
     display(dup);
     set_pc(four);
 // ill-advised assignment
     accumulate(dup,five) = four;
-    std::cout << "Displaying dup after ill-advised assignment:\n";
+    cout << "Displaying dup after ill-advised assignment:\n";
     display(dup);
-    // std::cin.get();
+    
+    system("pause");
     return 0;
 }
 
 void display(const free_throws & ft)
 {
-    using std::cout;
     cout << "Name: " << ft.name << '\n';
     cout << "  Made: " << ft.made << '\t';
     cout << "Attempts: " << ft.attempts << '\t';

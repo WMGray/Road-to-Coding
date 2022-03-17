@@ -1,8 +1,9 @@
 // firstref.cpp -- defining and using a reference
 #include <iostream>
+using namespace std;
+
 int main()
 {
-    using namespace std;
     int rats = 101;
     int & rodents = rats;   // rodents is a reference
 
@@ -16,6 +17,7 @@ int main()
 // addresses to type unsigned
     cout << "rats address = " << &rats;
     cout << ", rodents address = " << &rodents << endl;
-    // cin.get();
+    
+    system("pause");
     return 0; 
 }
