@@ -237,4 +237,7 @@
        2. `“一对一”方式`：把多分类问题转换为$C (C-1) /2$个“一对一”的二分类问题。这种方式需要$C (C-1) /2$个判别函数，其中第$(i,j)$个判别函数是把类别$i$到类别$j$的样本分开。
        3. `“argmax”方式`：这是一种改进的“一对其余”方式，共需要$C$个判别函数
           $$ f_c(x;w_c) = w_c^T x + b_c, c \in \{1,2,…,C\} $$   
-          对于样本$x$,如果存在类别$c$，相对于所有的其他类别$\widetilde{c} (\widetilde{c} \ne c)$有$f_c(x;w_c) > f_{\widetilde{c}}(x; w_{\widetilde{c}})$，那么样本$x$属于类别$c$。
+          对于样本$x$,如果存在类别$c$，相对于所有的其他类别$\widetilde{c} (\widetilde{c} \ne c)$有$f_c(x;w_c) > f_{\widetilde{c}}(x; w_{\widetilde{c}})$，那么样本$x$属于类别$c$。函数定义为：
+          $$y = arg \max_{c = 1}^C f_c(x; w_c)$$
+     - “一对其余”方式和“一对一”方式都存在一个缺陷：特征空间中会存在一些难以确认的区域，而“argmax“方式很好地解决了这个问题。
+     - `多类线性可分`：对于训练集$\mathcal{D} = \{(x^{(n)},y^{(n)})\}_{n=1}^N$，如果存在$C$个权重向量$w_1^*, w_2^*, …, w_C^*$，使得第$c(1 \le c \le C)$类的所有样本都满足$f_c(x;w_c^*) > f_{\widetilde{c}}(x;w_{\widetilde{c}}^*), \forall \widetilde{c} \ne c$，那么训练集$\mathcal{D}$是线性可分的。
