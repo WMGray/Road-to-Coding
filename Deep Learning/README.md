@@ -239,5 +239,43 @@
           $$ f_c(x;w_c) = w_c^T x + b_c, c \in \{1,2,…,C\} $$   
           对于样本$x$,如果存在类别$c$，相对于所有的其他类别$\widetilde{c} (\widetilde{c} \ne c)$有$f_c(x;w_c) > f_{\widetilde{c}}(x; w_{\widetilde{c}})$，那么样本$x$属于类别$c$。函数定义为：
           $$y = arg \max_{c = 1}^C f_c(x; w_c)$$
+      ![多分类问题的三种方式](./images/多分类问题的三种方式.png)
+      
      - “一对其余”方式和“一对一”方式都存在一个缺陷：特征空间中会存在一些难以确认的区域，而“argmax“方式很好地解决了这个问题。
      - `多类线性可分`：对于训练集$\mathcal{D} = \{(x^{(n)},y^{(n)})\}_{n=1}^N$，如果存在$C$个权重向量$w_1^*, w_2^*, …, w_C^*$，使得第$c(1 \le c \le C)$类的所有样本都满足$f_c(x;w_c^*) > f_{\widetilde{c}}(x;w_{\widetilde{c}}^*), \forall \widetilde{c} \ne c$，那么训练集$\mathcal{D}$是线性可分的。
+
+### 3.2 Logistic回归
+   - `Logistic回归`是一种常用的处理二分类问题的线性模型。
+   - 为了解决连续的线性函数不适合进行分类的问题，引入非线性函数$g: \Bbb R ^D \rightarrow (0,1)$来预测类别标签的后验概率$p(y = 1 | x)$
+     $$ p(y = 1 | x) = g(f(x;w)) $$
+     其中$g(·)$被称为`激活函数`，作用是将线性函数的值域从实数区间“压缩”到了(0,1)之间，可以用来表示概率。激活函数的逆函数也称为“联系函数”。
+   - 在Logistic回归中，使用Logistic函数来作为激活函数，标签$y = 1$的后验概率为
+     $$ p(y = 1 | x) = \frac{1}{1 + \exp(-w^T x) } $$
+     标签$y = 0$的后验概率为
+     $$ p(y = 0 | x) = \frac{\exp(-w^T x)}{1 + \exp(-w^T x) } $$
+   - `比率(Odds)`：样本$x$正反例后验概率的比值，即$\frac{p(y = 1 | x)}{p(y = 0 | x)}$
+
+#### 3.2.1 参数学习
+  - Logistic回归采用交叉熵作为损失函数，并使用梯度下降法来对参数进行优化。
+
+### 3.2 Softmax回归
+  - `Softmax回归`也称为多项/多类的Logistic回归，是Logistic回归在多分类问题上的推广。
+  - 对于多类问题，类别标签$y \in \{0,1,…,C-1\}$可以有$C￥个取值，给定一个样本$x$,Softmax回归预测的属于类别$c$的条件概率为
+    $$ p(y = c | x) = softmax(w_c^Tx) = \frac{\exp(w_c^Tx)}{\sum_{c^{'} = 1}^C \exp(w_{c^{'}}^T x)} $$
+    其中$w_c$是第$c$类的权重向量。
+
+#### 3.3.1 参数学习
+  - Softmax回归使用交叉熵损失函数来学习最优的参数矩阵$W$
+  - 两个导数公式：
+    1. 若$y = sfotmax(z)$,则$\frac{\partial y}{\partial z} = diag(y) - yy^T$
+    2. 若$z = W^T x = [w_1^T x, w_2^T x, …, w_C^T x]$，则$\frac{\partial z}{\partial w_c}$为第$c$列为$x$,其余为0的矩阵。
+       $$\frac{\partial z}{\partial w_c} = [\frac{\partial w_1^T x}{\partial w_c}, \frac{\partial w_2^T x}{\partial w_c}, …, \frac{\partial w_C^T x}{\partial w_c}] = [0,0,…, x, …, 0]$$
+  - Softmax回归中使用的$C$个权重向量是冗余的，即对所有的权重向量都减去一个同样的向量$v$，不改变其输出结果。因此，Softmax回归往往需要正则化来约束其参数。
+
+### 3.4 感知器
+  - 感知器由Frank Roseblatt于1957年提出，是一种广泛使用的线性分类器，感知器可谓是最简单的人工神经网络，只有一个神经元。
+  - 感知器是一个两类线性分类模型，其分类准则为
+    $$\hat y = sgn(w^T x) $$
+#### 3.4.1 参数学习
+  - 感知器的学习算法是一种错误驱动的在线学习算法。先初始化一个权重向量$w \leftarrow 0(通常是全零向量)$，然后每次分错一个样本$(x,y)$时，即$y w^T x < 0$,就用这个样本来更新权重。
+
