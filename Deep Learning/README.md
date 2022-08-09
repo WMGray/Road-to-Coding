@@ -337,4 +337,95 @@
   - `MP神经元`中的激活函数$f$为0或1的阶跃函数，现代神经元中的激活函数通常要求是连续可导的函数。
   - 假设一个神经元接手$D$个输入$x_1,x_2,…,x_D$,令向量$x = [x_1, x_2, …, x_D]$来表示这些输入，并用`净输入`$z \in \Bbb R$来表示一个神经元所获得的输入信号$x$的加权和,
   $$ z = \sum_{d=1}^D w_d x_d + b  = w^Tx + b$$
-  其中$w = [w_1, w_2, …, w_D] \in \Bbb R$是$D$维的权重向量，$b \in \Bbb R$是偏置。
+  其中$w = [w_1, w_2, …, w_D] \in \Bbb R$是$D$维的权重向量，$b \in \Bbb R$是偏置。   
+  净输入$z$在经过一个非线性函数$f(·)$后得到神经元的活性值$a$,
+  $$a = f(z)$$
+  其中非线性函数$f(·)$是一个激活函数。
+  - 典型的神经元结构示例：
+    ![典型的神经元结构示例](./images/典型的神经元结构.png)
+  - `激活函数`：为了增强网络的表示能力和学习能力，激活函数需要具备以下几种性质：
+    1. 连续并可导（允许少数点上不可导）的非线性函数，可导的激活函数可以直接利用数值优化的方法来学习网络参数
+    2. 激活函数及其导数要尽可能的简单，有利于提高网络计算效率
+    3. 激活函数的导函数的至于要在一个合适的区间内，不能太大也不能太小，否则会影响训练的效率和稳定性
+
+#### 4.1.1 Sigmoid型函数
+  - `Signmoid函数`是指一类S型曲线函数，为两端饱和函数，常用的Sigmoid型函数有Logistic函数和Tanh函数。
+    - `饱和`：对于函数$f(x)$,若$x \rightarrow -\infty$时，其导数$f'(x) \rightarrow 0$,则称其`左饱和`；
+              对于函数$f(x)$,若$x \rightarrow +\infty$时，其导数$f'(x) \rightarrow 0$,则称其`右饱和`。
+  - `Logistic函数`:
+     $$ \sigma(x) = \frac{1}{1+e^{-x}}$$
+     当输入值在0附近时，Sigmoid型函数近似为线性函数，当输入值靠近两端时，对输入进行抑制，输入越小，越接近于0；输入越大，越接近于1。
+  - `Tanh函数`:
+      $$ \tanh(x) = \frac{exp(x) - exp(-x)}{exp(x) + exp(-x)}$$
+      Tanh函数可以看作放大并平移的Logistic函数，其值域是[-1, 1]。
+      $$ tanh(x) = 2 \sigma(2x) - 1 $$
+
+  - Logistic函数和Tanh函数
+    ![Logistic函数和Tanh函数](./images/Logistic函数和Tanh函数.png)
+    Tanh函数的输出是`零中心化`的，而Logistic函数的输出恒大于0，非零中心化的输出会使得其后一层的神经元的输入发生`偏置偏移`，并进一步使得梯度下降的收敛速度变慢。
+
+  1. Hard-Logistic函数和Hard-Tanh函数
+     - $$ hard-logistic = \max (\min (0.25x + 0.5, 1), 0) $$
+     - $$ hard-tanh = \max (\min (x, 1), -1) $$       
+       ![Hard-Logistic函数和Hard-Tanh函数](./images/Hard-Logistic和Hard-Tanh形状.png)
+
+  
+#### 4.1.2 ReLU函数
+  - `ReLU`(修正线性单元)，也叫Rectifier函数，是目前深度神经网络中经常使用的激活函数，定义为：
+    $$ ReLU(x)  = \begin{cases}
+      x, x \ge 0 \\
+      0, x < 0
+    \end{cases} = \max (0, x) $$
+    - 优点：采用ReLU神经元只需要进行加、乘和比较的操作，计算上更加高效。ReLU函数也被认为具有生物学合理性。     
+            在优化方面，相比于Sigmoid型函数的两端饱和，ReLU函数为左饱和函数，且在$x > 0$时，其导数为1。在一定程度上缓解了神经网络的梯度消失问题，加速梯度下降的收敛速度。
+    - 缺点：ReLU函数的输出是非零中心化的，给后一层的神经网络引入偏置偏移会影响梯度下降的效率。此外，ReLU神经元在训练时比较容易”死亡“。在训练时，如果参数在一次不恰当的更新过后，第一个隐藏层中的某个ReLU神经元在所有的训练数据上都不能激活，那么这个神经元自身参数的梯度永远都会是0，在以后的训练过程中永远不能被激活，这种现象称为`死亡ReLU问题`，并且也有可能发生在其他隐藏层。
+  1. 带泄露的ReLU
+     带泄露的ReLU在输入$x < 0$时，保持一个很小的梯度$\gamma$,这样当神经元非激活时也能有一个非零的梯度可以更新参数，避免永远不能被激活。定义如下：
+      $$ ReLU(x) = \begin{cases} x, x > 0 \\ \gamma x, x \le 0 \end{cases} = \max(0,x) + \gamma \min(0,x) $$
+      其中$\gamma$是一个很小的常数。
+  2. 带参数的ReLU
+     带参数的ReLU引入一个可学习的参数，不同神经元可以有不同的参数，对于第$i$个神经元，其PReLU的定义为：
+     $$ PReLU(x) = \begin{cases}
+       x, x > 0 \\
+       \gamma_i x, x \le 0
+      \end{cases} = \max(0,x) + \gamma_i \min(0,x) $$
+      其中$\gamma_i$为$x \le 0$时函数的斜率。因此，PReLU是非饱和函数，如果$\gamma_i = 0$,那么PReLU函数就退化为ReLU函数。如果$\gamma_i$为一个很小的常数，则PReLU函数可以看作带泄露的ReLU函数。PReLU可以允许不同的神经元具有不同的参数，也可以一组神经元共享一个参数。
+  3. ELU函数
+     ELU(指数线性单元)是一个近似的零中心化的非线性函数，定义为：
+     $$ ELU(x) = \begin{cases}
+       x, x > 0 \\
+       \gamma (exp(x)-1), x \le 0
+      \end{cases} = \max(0,x) + \min(0, \gamma (exp(x) - 1)) $$
+      其中$\gamma \ge 0$是一个超参数，决定$x \le 0$时的饱和曲线，并调整输出均值在0附近。
+  4. Softplus函数
+     Softplus可以看作Rectifier(ReLU)函数的平滑版本，定义如下：
+     $$ Softplus(x) = \log(1 + exp(x)) $$
+     Softplus函数其导数刚好是Logistic函数，Softplus函数虽然也具有单侧抑制、宽兴奋边界的特性，却没有稀疏激活性。
+     ![函数示例](./images/ReLU、Leaky%20ReLU、ELU以及Softplus函数.png)
+
+### 4.1.3 Swish函数
+   - Swish函数是一种`自门控`激活函数，定义为
+     $$ Swish(x) = x  \sigma(\beta x) $$
+     其中$\sigma(·)$是Logistic函数，$\beta$是一个可学习或一个固定超参数，$\sigma(·) \in (0,1)$可以看作一种软性的门控机制。当$\sigma(\beta x)$接近于1时，门处于“开”状态，激活函数的输出近似于$x$本身；当$\sigma(\beta x)$接近于0时，门处于“关”状态，激活函数的输出近似于0。
+      ![函数示例](./images/Swish函数.png)
+
+#### 4.1.4 GELU函数
+  - `GELU(高斯误差线性单元)`也是一种通过门控机制来调整其输出值的激活函数，和swish函数比较类似。
+    $$ GELU(x) = x P (X \le x)$$
+    其中$P(X \le x)$是高斯分布$\mathcal{N}(\mu, \sigma^2)$的概率密度函数，其中$\mu$和$\sigma^2$是可学习的超参数,一般设$\mu = 0$，$\sigma = 1$即可。         
+    由于高斯分布的累积分布函数为S型函数，因此GELU函数也可以用Tanh函数或者Logistic函数来近似
+    当使用Logistic函数来近似时，GELU函数相当于一种特殊的Swish函数。
+
+#### 4.1.5 Maxout单元
+  - `Maxout单元`是一种分段线性函数，其输入是上一层神经元的全部原始输出，是一个向量$x = [x_1; x_2; …; x_D]$。每个Maxout单元有$K$个权重向量$w_k \in \Bbb R^D$和偏置向量$b_k (1 \le k \le )$，对于输入$x$，可以得到$K$个净输入$z_k, 1 \le k \le K$。
+  $$ z_k = w_k^T x + b_k $$
+  其中$w_k = [w_{k,1}, w_{k,2}, …, w_{k,D}]$为第$k$个权重向量。
+  - Maxout单元的非线性函数定义为
+    $$ Maxout(x) = \max_{k \in [1,K]} z_k $$
+
+
+### 4.2 网络结构
+
+#### 4.2.1 前馈网路
+#### 4.2.2 记忆网络
+#### 4.2.3 图网络
