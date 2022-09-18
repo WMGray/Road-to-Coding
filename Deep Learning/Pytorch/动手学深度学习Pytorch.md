@@ -129,3 +129,132 @@ $$
 2. 将数据读入计算机后对其进行处理
 
 - `张量(tensor)`：$$n$$维数组
+
+- `张量类`：在MXNet中为**ndarray**，在Pytorch和Tensorflow中为**Tensor**
+####  2.1.1 入门
+
+ - 使用 `arange` 创建一个行向量 `x`，**默认为整数**
+
+   ```python
+   x = torch.arange(12)
+   ```
+
+ - `shape`属性访问张量(沿每个轴的长度)的形状，`numel`函数返回形状的元素乘积(大小)
+
+   ```python
+   x.shape
+   x.numel()
+   ```
+
+ - `x.reshape（）`函数修改张量的形状而不改变元素数量和元素值，当其中一个参数为-1时，该参数会自动选择合适的参数
+
+   ```python
+   X = x.reshape(3, 4)# 需重新赋值，若只是x.reshape(),则不会改变x
+   X = x.reshape(5,-1)
+   ```
+
+ - 全0—-torch.zeros() 全1—-torch.ones() 正态分布—-torch.randn()     
+
+   ```python
+   torch.ones((3,2,3))
+   torch.zeros(5,1,5)
+   torch.randn(3,4)   # 每一个值都从均值为0、标准差为1的的标准正态分布中随机采样
+   ```
+
+- 也可以通过嵌套列表对张量进行赋值
+
+  ```python
+  X = torch.tensor([[1,2,33,7],[0,0,0,0]])
+  ```
+
+#### 2.1.2 运算符
+
+-  使用**,**表示一个具有5个元素的元组，每个元素都是按元素操作的结果      
+
+  ```python
+  x + y, x - y, x * y, x / y, x ** y  # **运算符是求幂运算
+  ```
+
+- 可以把多个张量连结（concatenate）在一起， 把它们端对端地叠起来形成一个更大的张量。 我们只需要提供张量列表，并给出沿哪个轴连结。
+
+  ```python
+  torch.concat((x, y), dim=0)   # 轴--0 沿行
+  torch.concat((x, y), dim=1)   # 轴--1 沿列
+  ```
+
+- **X == Y** : 对于每个位置，如果X和Y在该位置相等，则新张量中相应项的值为1。
+
+- 对张量中的所有元素进行求和，会产生一个单元素张量。
+
+  ```python
+  X.sum()
+  ```
+
+#### 2.1.3 广播机制
+- `广播机制`（broadcasting mechanism）：可以对形状不同的两个张量执行按元素操作
+
+  1. 首先通过适当复制元素来扩展一个或两个数组，使两个张量具有相同的形状
+
+  2. 然后对生成的数组执行按元素操作
+  
+#### 2.1.4 索引和切片
+
+- 张量中的元素可以通过索引访问
+
+- 为多个元素赋值相同的值，我们只需要索引所有元素，然后为它们赋值
+
+  ```python
+  X[:2, :2] = 1000  # 前面是行， 后面是列
+  X
+  ```
+
+#### 2.1.5 节省内存
+
+- ``id()``函数：提供内存中引用对象的确切地址
+
+- 用`Y = X + Y`，我们将取消引用`Y`指向的张量，而是指向新分配的内存处的张量，进而导致内存的浪费和引用的混淆
+
+- 使用**切片表示法**将操作的结果分配给先前分配的数组
+
+  - `zeros_like(Y)`函数分配一个全0的与Y形状相同的块
+
+    ```python
+    id(a) == before, id(a), before
+    #%%
+    a = torch.tensor([1,2,3])
+    b = torch.arange(3).reshape(1,-1)  # (1, 3) -1 自动选择合适的参数
+    c = torch.zeros_like(b)
+    print('id(Z):', id(c))
+    c[:] = a + b
+    print('id(Z):', id(c))
+    ```
+
+  - 使用`X[:] = X + Y`或`X[:] = X + Y`也可以哦
+
+    ```python
+    a = torch.tensor([1,2,3])
+    b = torch.arange(2,5)
+    before = id(a)
+    a += b
+    id(a) == before
+    ```
+
+#### 2.1.6 转换为其他Python对象
+
+  - torch张量和numpy数组将共享它们的底层内存，就地操作更改一个张量也会**同时更改**另一个张量。
+
+    ```python
+    A = X.numpy()
+    B = torch.tensor(A)
+    type(A), type(B)
+    ```
+
+  - 使用`item`函数或者Python的内置函数可以将**大小为1**的张量转换为Python标量
+
+    ```python
+    a = torch.tensor([1.2525])
+    a, a.item(), int(a), float(a)
+    ```
+
+    
+
