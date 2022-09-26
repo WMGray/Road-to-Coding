@@ -258,3 +258,283 @@ $$
 
     
 
+### 2.2 数据预处理
+
+#### 2.2.1 读取数据集
+
+- `pandas.read_csv(data_file)`读取`csv`文件
+
+  ```python
+  data = pd.read_csv(data_file)
+  ```
+
+#### 2.2.2 处理缺失值
+
+- `NaN`项代表**缺失值**，有两种方法处理缺失值：
+
+  1. **插值法**：用一个替代值去弥补缺失值
+  2. **删除法**：忽略缺失值
+
+- `iloc[]`：位置索引
+
+  ```python
+  inputs, outputs = data.iloc[:, :2], data.iloc[:,2]  # 每一行的前两列   每一行的第3列
+  inputs = inputs.fillna(inputs.mean())  # 用inputs的 同一列 的平均值 填充
+  ```
+
+- 将`NaN`当作一个类别，第二列这个`Alley`按其值分为两列。一列为1，一列为0
+
+  ```python
+  inputs = pd.get_dummies(inputs, dummy_na=True)
+  inputs
+  ```
+
+#### 2.2.3 转换为张量格式
+
+- `torch.tensor()`函数，将列表转换为张量
+
+  ```python
+  x, y = torch.tensor(inputs.values), torch.tensor(outputs.values)  # values这个属性是将ndarray的每一列作为一个列表
+  x, y
+  ```
+
+- `data.isna().sum()`：统计每一列的NaN的个数
+
+- `data.idxmax() `：返回列最大值的行索引  当参数为1时返回列最大值的行索引   最小值为idxmin()
+
+- `data.drop()`：axis 默认为0 删除行   为1时 删除列   inplace=True 修改原数据  False不改变源数据，而是新拷贝一个再修改
+
+  - labels 就是要删除的行列的名字，用列表给定
+
+  - axis 默认为0，指删除行，因此删除columns时要指定axis=1；
+
+  - index 直接指定要删除的行
+
+  - columns 直接指定要删除的列
+
+  - inplace=False，默认该删除操作不改变原数据，而是返回一个执行删除操作后的新dataframe；
+
+  - inplace=True，则会直接在原数据上进行删除操作，删除后无法返回。
+
+    ```python
+    # 删除缺失值最多的列
+    num = inputs.isna().sum() # 统计每一列的NaN的个数 返回类型为pd,cores.series
+    Max_nan = num.idxmax()  # 返回列最大值的行索引  当参数为1时返回列最大值的行索引   最小值为idxmin()
+    inputs.drop(labels=Max_nan, axis=1, inplace=True)  # axis 默认为0 删除行   为1时 删除列   inplace=True 修改原数据  False不改变源数据，而是新拷贝一个再修改
+    ```
+
+### 2.3 线性代数
+
+#### 2.3.1 标量
+
+- `标量`：仅包含一个数值
+- `变量`：未知的标量值，用小写字母表示：$x\in\mathbb{R}$表示$x$是一个实值标量
+
+#### 2.3.2 向量
+
+- `向量`：标量值组成的列表，用粗体、小写的符号表示：$\mathbf{x}$
+
+- 列向量是向量的默认方向
+  $$
+  \begin{split}\mathbf{x} =\begin{bmatrix}x_{1}  \\x_{2}  \\ \vdots  \\x_{n}\end{bmatrix},\end{split}
+  $$
+
+  ```python
+  x = torch.arange(5)
+  x[2]
+  ```
+
+  
+
+##### 2.3.2.1 长度、维度和形状
+
+- `维度`(dimension)：向量的长度
+
+  - `len()`函数
+
+  - 当用张量表示一个向量（只有一个轴）时，我们也可以通过`.shape`属性访问向量的长度。
+
+    ```python
+    len(x), x.shape
+    ```
+
+- 张量的维度用来表示张量具有的轴数；张量的某个轴的维数就是这个轴的长度
+
+#### 2.3.3 矩阵
+
+- `矩阵`：将向量从一阶推广到二阶，通常用粗体、大写字母来表示：$\mathbf{X}$。使用$\mathbf{A} \in \mathbb{R}^{m \times n}$来表示矩阵$\mathbf A$，其由$m$行和$n$列的实值标量组成
+
+- 矩阵元素可通过**下标索引**访问
+
+- `转置`：矩阵的行列互换
+
+  ```python
+  B = torch.tensor([[1, 2, 3], [2, 0, 4], [3, 4, 5]])
+  B, B.T , B == B.T
+  ```
+
+#### 2.3.4 张量
+
+- 向量是一阶张量，矩阵是二阶张量
+
+#### 2.3.5 张量算法的基本性质
+
+- 任何**按元素**的**一元运算**都**不改变**其操作数的**形状**。 
+
+- 给定具有**相同形状**的任意两个张量，任何**按元素二元运算**的结果都将是**相同形状**的张量。
+
+- `Hadamard积`(Hadamard product)：两个矩阵的**按元素乘法**（数学符号**⊙**）
+
+- 将张量乘以或加上一个**标量**不会改变张量的形状，其中张量的每个元素都将与标量相加或相乘。
+
+  ```python
+  A = torch.tensor([[1,2],[3,4]])
+  B = 10
+  A, B, A * B, A + B
+  ```
+
+#### 2.3.6 降维
+
+- `求和`：$\sum$，`sum()`函数-----求张量所有元素和
+
+  - 参数`axis=0`：按**行**元素降维，实质是求列元素的和
+
+  - 参数`axis=1`：按**列**元素降维，实质求行元素的和
+
+    ```python
+    A, A.sum(), A.sum(axis=0), A.sum(axis=1)
+    ```
+
+- `平均值`：`mean()`函数、或者`A.sum()/A.numel()`
+
+  ```python
+  A.mean() 同样可以指定轴 axis=0--沿行元素 得列均值； axis=1--沿列元素 得行均值
+  A, A.mean(axis=0), A.mean(axis=1)
+  ```
+
+##### 2.3.6.1 非降维求和
+
+- `keepdims=True`，`sum()`函数中的参数，求和但保持**维度不变**
+
+- 沿某个轴计算`A`元素的累积总和----`cunsum()`函数，不降低维度。该求和是求$A[i,j]$之前得元素和，例如$A[1,3] = A[1,0] + A[1,1] + A[1,2] + A[1,3]$
+
+  ```python
+  A = torch.tensor([[1,2],[3,4],[5,6],[7,8]])
+  A, A.cumsum(axis=0)
+  ```
+
+#### 2.3.7 点积(Dot Product)
+
+- `点积`($\mathbf{x}^\top\mathbf{y}$)：**相同位置**元素**乘积**的和：$\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$
+
+- 也可以通过**按元素乘**再**求和**求点积
+
+  ```python
+  #%%
+  x = torch.tensor([1,2,3,4])
+  y = torch.arange(4)
+  x, y, torch.dot(x,y), torch.sum(x * y)
+  ```
+
+- 当权重为**非负数**且**和为1**，点积表示为**加权平均**
+
+#### 2.3.8 矩阵-向量积
+
+- `矩阵向量积`$\mathbf{A}\mathbf{x}$是一个长度为$m$的列向量，第$i$个元素是点积$\mathbf{a}^\top_i \mathbf{x}$
+
+- `mv()`函数--矩阵向量积，$A$的列维数（沿轴1的长度--行元素个数）必须与$x$​的维数--其长度相同
+
+  ```python
+  x = torch.tensor([1,2])
+  A, x, A.shape, x.shape, torch.mv(A,x)
+  ```
+
+#### 2.3.9 矩阵-矩阵乘法
+
+- `矩阵积`：$\mathbf{C} = \mathbf{A}\mathbf{B}$
+  $$
+  \begin{split}\mathbf{C} = \mathbf{AB} = \begin{bmatrix}
+  \mathbf{a}^\top_{1} \\
+  \mathbf{a}^\top_{2} \\
+  \vdots \\
+  \mathbf{a}^\top_n \\
+  \end{bmatrix}
+  \begin{bmatrix}
+   \mathbf{b}_{1} & \mathbf{b}_{2} & \cdots & \mathbf{b}_{m} \\
+  \end{bmatrix}
+  = \begin{bmatrix}
+  \mathbf{a}^\top_{1} \mathbf{b}_1 & \mathbf{a}^\top_{1}\mathbf{b}_2& \cdots & \mathbf{a}^\top_{1} \mathbf{b}_m \\
+   \mathbf{a}^\top_{2}\mathbf{b}_1 & \mathbf{a}^\top_{2} \mathbf{b}_2 & \cdots & \mathbf{a}^\top_{2} \mathbf{b}_m \\
+   \vdots & \vdots & \ddots &\vdots\\
+  \mathbf{a}^\top_{n} \mathbf{b}_1 & \mathbf{a}^\top_{n}\mathbf{b}_2& \cdots& \mathbf{a}^\top_{n} \mathbf{b}_m
+  \end{bmatrix}.\end{split}
+  $$
+  
+
+```python
+A = torch.arange(12).reshape(3,-1)
+B = torch.arange(10,130,10).reshape(4,-1)
+A, B, torch.mm(A, B)
+```
+
+#### 2.3.10 范数
+
+- `范数`(norm)：一个向量的大小，不涉及维度，而是分量的大小
+
+- 线性代数中，如果我们按常数因子$α$​缩放向量的所有元素， 其范数也会按相同常数因子的**绝对值**缩放：
+  $$
+  f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).
+  $$
+
+- 三角不等式：
+  $$
+  f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).
+  $$
+
+- 范数**非负**：
+  $$
+  f(\mathbf{x}) \geq 0.
+  $$
+
+- 范数**最小值为0**，当且仅当**向量值全为0**：
+  $$
+  \forall i, [\mathbf{x}]_i = 0 \Leftrightarrow f(\mathbf{x})=0.
+  $$
+
+- `欧几里得距离`是一个$L_2$​范数，$L_2$​范数是向量元素**平方和的平方根**：
+  $$
+  \|\mathbf{x}\|_2 = \sqrt{\sum_{i=1}^n x_i^2},
+  $$
+
+  ```python
+  u = torch.tensor([3.0, -4.0])   # 浮点型
+  torch.norm(u)
+  ```
+
+- \|\mathbf{x}\|_1 = \sum_{i=1}^n \left|x_i \right|.
+  $$
+  \|\mathbf{x}\|_1 = \sum_{i=1}^n \left|x_i \right|.
+  $$
+
+  ```python
+  torch.abs(u).sum()
+  ```
+
+- $L_P$​**范数**：
+  $$
+  \|\mathbf{x}\|_p = \left(\sum_{i=1}^n \left|x_i \right|^p \right)^{1/p}.
+  $$
+
+- `Frobenius范数`：矩阵的范数。矩阵元素平方和的平方根：
+  $$
+  \|\mathbf{X}\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n x_{ij}^2}.
+  $$
+
+  ```python
+  torch.ones((4, 9)), torch.norm(torch.ones((4, 9)))
+  ```
+
+  
+
+### 2.4 微积分
+
