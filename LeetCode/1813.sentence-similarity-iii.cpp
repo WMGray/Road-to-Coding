@@ -22,86 +22,35 @@ using namespace std;
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include <bits/stdc++.h>
 // @lcpr-template-end
 // @lc code=start
 class Solution
 {
 public:
+    vector<string> to_words(string S)
+    {
+        stringstream ss;
+        vector<string> res;
+        ss << S;
+        string b;
+        while (ss >> b)
+            res.push_back(b);
+        return res;
+    }
     bool areSentencesSimilar(string sentence1, string sentence2)
     {
-        int s1_length = sentence1.size();
-        int s2_length = sentence2.size();
-
-        if (s1_length > s2_length)
-        {
-            // 保证s1 是短字符串
+        if (sentence1.size() > sentence2.size())
             swap(sentence1, sentence2);
-            swap(s1_length, s2_length);
-        }
-        // 前面
-        int i = s1_length - 1, j = s2_length - 1;
-        while (i >= 0 && j >= 0)
-        {
-            if (sentence1[i] == sentence2[j])
-            {
-                i--;
-                j--;
-            }
-            else
-                break;
-        }
-        if (i == -1 && (j == -1 || sentence2[j] == ' '))
-            return true;
-
-        // 后面
-        i = 0, j = 0;
-        while (i < s1_length && j < s2_length)
-        {
-            if (sentence1[i] == sentence2[j])
-            {
-                i++;
-                j++;
-            }
-            else
-                break;
-        }
-        if (i == s1_length && (j == s2_length || sentence2[j] == ' '))
-            return true;
-
-        // 中间
-        i = 0, j = 0;
-        while (i < s1_length && j < s2_length)
-        {
-            if (sentence1[i] == sentence2[j])
-            {
-                i++;
-                j++;
-            }
-            else
-                break;
-        }
-        i--;
-        while (i >= 0 && sentence1[i] != ' ')
-            i--;
-        int a = i;
-        i = s1_length - 1, j = s2_length - 1;
-        while (i >= 0 && j >= 0)
-        {
-            if (sentence1[i] == sentence2[j])
-            {
-                i--;
-                j--;
-            }
-            else
-                break;
-        }
-        i++;
-        while (i < s1_length && sentence1[i] != ' ')
-            i++;
-        cout << a << "  " << i;
-        if (i <= a)
-            return true;
-        return false;
+        vector<string> s1 = to_words(sentence1);
+        vector<string> s2 = to_words(sentence2);
+        int s1_len = s1.size(), s2_len = s2.size();
+        int l = 0, r = 0;                    // 左右相等单词个数
+        while (l < s1_len && s1[l] == s2[l]) // 左边相等个数
+            l++;
+        while (r < s1_len - l && s1[s1_len - 1 - r] == s2[s2_len - 1 - r]) // 减去左边相等的个数
+            r++;
+        return l + r == s1_len;
     }
 };
 // @lc code=end
