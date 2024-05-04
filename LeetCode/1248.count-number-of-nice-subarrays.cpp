@@ -44,7 +44,6 @@ public:
             if (value >= k)
                 res += m[value - k];
         }
-
         return res;
     }
 };
