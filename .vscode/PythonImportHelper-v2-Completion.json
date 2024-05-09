@@ -1,0 +1,845 @@
+[
+    {
+        "label": "collections",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "collections",
+        "description": "collections",
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "choice",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "M",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "M",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "L",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "ENOEXEC",
+        "importPath": "errno",
+        "description": "errno",
+        "isExtraImport": true,
+        "detail": "errno",
+        "documentation": {}
+    },
+    {
+        "label": "answer_challenge",
+        "importPath": "multiprocessing.connection",
+        "description": "multiprocessing.connection",
+        "isExtraImport": true,
+        "detail": "multiprocessing.connection",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numbers",
+        "description": "numbers",
+        "detail": "numbers",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "find_spec",
+        "importPath": "importlib.util",
+        "description": "importlib.util",
+        "isExtraImport": true,
+        "detail": "importlib.util",
+        "documentation": {}
+    },
+    {
+        "label": "getfilesystemencodeerrors",
+        "importPath": "sys",
+        "description": "sys",
+        "isExtraImport": true,
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "importPath": "this",
+        "description": "this",
+        "isExtraImport": true,
+        "detail": "this",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "get_fotmatted_name",
+        "importPath": "name",
+        "description": "name",
+        "isExtraImport": true,
+        "detail": "name",
+        "documentation": {}
+    },
+    {
+        "label": "AnonymousSurvey",
+        "importPath": "survey",
+        "description": "survey",
+        "isExtraImport": true,
+        "detail": "survey",
+        "documentation": {}
+    },
+    {
+        "label": "FrenchDeck",
+        "kind": 6,
+        "importPath": "Python.Fluent_Python.FrenchDeck",
+        "description": "Python.Fluent_Python.FrenchDeck",
+        "peekOfCode": "class FrenchDeck:\n  ranks = [str(n) for n in range(2, 11)] + list('JQKA')  # 纸牌大小\n  suits = 'spades diamonds clubs hearts'.split()         # 纸牌样式\n  def __init__(self):\n    \"\"\"创建一副牌\"\"\"\n    self._cards = [Card(rank, suit) for suit in self.suits\n                  for rank in self.ranks]\n  def __len__(self):\n    \"\"\"返回牌的数量\"\"\"\n    return len(self._cards)",
+        "detail": "Python.Fluent_Python.FrenchDeck",
+        "documentation": {}
+    },
+    {
+        "label": "Card",
+        "kind": 5,
+        "importPath": "Python.Fluent_Python.FrenchDeck",
+        "description": "Python.Fluent_Python.FrenchDeck",
+        "peekOfCode": "Card = collections.namedtuple('Card', ['rank', 'suit'])\nclass FrenchDeck:\n  ranks = [str(n) for n in range(2, 11)] + list('JQKA')  # 纸牌大小\n  suits = 'spades diamonds clubs hearts'.split()         # 纸牌样式\n  def __init__(self):\n    \"\"\"创建一副牌\"\"\"\n    self._cards = [Card(rank, suit) for suit in self.suits\n                  for rank in self.ranks]\n  def __len__(self):\n    \"\"\"返回牌的数量\"\"\"",
+        "detail": "Python.Fluent_Python.FrenchDeck",
+        "documentation": {}
+    },
+    {
+        "label": "deck",
+        "kind": 5,
+        "importPath": "Python.Fluent_Python.FrenchDeck",
+        "description": "Python.Fluent_Python.FrenchDeck",
+        "peekOfCode": "deck = FrenchDeck()\nprint(len(deck))\nprint(deck[0])\nfrom random import choice\nprint(choice(deck))\nprint(deck[:3])\nprint(deck[12::13])\nfor card in deck:           # 迭代 \n  print(card)\nfor card in reversed(deck): # 反向迭代",
+        "detail": "Python.Fluent_Python.FrenchDeck",
+        "documentation": {}
+    },
+    {
+        "label": "Dog",
+        "kind": 6,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "class Dog:\n  '''一个简单的Dog类'''\n  def __init__(self, name, age):\n    '''初始化属性 name、age'''\n    self.name = name\n    self.age = age\n  def sit(self):\n    '''模拟小狗收到命令时蹲下'''\n    print(f'{self.name} is now sitting!')\n  def roll_over(self):",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "Car",
+        "kind": 6,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "class Car:\n  '''一次模拟汽车的简单尝试'''\n  def __init__(self, make, model, year):\n    '''初始化汽车的属性'''\n    self.make = make \n    self.model = model\n    self.year = year\n    self.odometer = 800\n  def get_description(self):\n    '''返回汽车的描述'''",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "ElectricCar",
+        "kind": 6,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "class ElectricCar(Car):\n  '''电动汽车的特殊之处'''\n  def __init__(self, make, model, year):\n    '''初始化父类的属性'''\n    super().__init__(make, model, year)\n    self.battery_size = 75\n  def describe_battery_size(self):\n    print(f\"The car's battery size is {self.battery_size}\")\n  def get_description(self): #重写\n    print(\"This is an electriccar\")",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "my_dog",
+        "kind": 5,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "my_dog = Dog('Kitty', 5)\nyour_dog = Dog('Lucy', 6)\nprint(f\"My dog's name is {my_dog.name}.\")\nprint(f\"Your dog's name is {your_dog.name}.\")\nprint(f\"My dog's age is {my_dog.age}. \")\nprint(f\"Your dog's age is {your_dog.age}. \")\nmy_dog.sit()\nmy_dog.roll_over()\n# Car类\nclass Car:",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "your_dog",
+        "kind": 5,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "your_dog = Dog('Lucy', 6)\nprint(f\"My dog's name is {my_dog.name}.\")\nprint(f\"Your dog's name is {your_dog.name}.\")\nprint(f\"My dog's age is {my_dog.age}. \")\nprint(f\"Your dog's age is {your_dog.age}. \")\nmy_dog.sit()\nmy_dog.roll_over()\n# Car类\nclass Car:\n  '''一次模拟汽车的简单尝试'''",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "my_new_car",
+        "kind": 5,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "my_new_car = Car('AE','Auto',2018)\nprint(my_new_car.get_description())\n# 修改属性值\nmy_new_car.year = 2020  # 直接修改\nmy_new_car.update_odometer(100)   # 通过方法修改\nprint(my_new_car.get_description())\n# 类的继承\nclass ElectricCar(Car):\n  '''电动汽车的特殊之处'''\n  def __init__(self, make, model, year):",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "my_new_car.year",
+        "kind": 5,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "my_new_car.year = 2020  # 直接修改\nmy_new_car.update_odometer(100)   # 通过方法修改\nprint(my_new_car.get_description())\n# 类的继承\nclass ElectricCar(Car):\n  '''电动汽车的特殊之处'''\n  def __init__(self, make, model, year):\n    '''初始化父类的属性'''\n    super().__init__(make, model, year)\n    self.battery_size = 75",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "my_tesla",
+        "kind": 5,
+        "importPath": "Python.python_learning.Class",
+        "description": "Python.python_learning.Class",
+        "peekOfCode": "my_tesla = ElectricCar('tesla','model s',2020)\nmy_tesla.get_description()\nmy_tesla.describe_battery_size()",
+        "detail": "Python.python_learning.Class",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "Python.python_learning.Input_while",
+        "description": "Python.python_learning.Input_while",
+        "peekOfCode": "name = input(\"输入一个名字: \" )\nprint(f'name = {name}')\n# while循环\nactive = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
+        "detail": "Python.python_learning.Input_while",
+        "documentation": {}
+    },
+    {
+        "label": "print(f'name",
+        "kind": 5,
+        "importPath": "Python.python_learning.Input_while",
+        "description": "Python.python_learning.Input_while",
+        "peekOfCode": "print(f'name = {name}')\n# while循环\nactive = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
+        "detail": "Python.python_learning.Input_while",
+        "documentation": {}
+    },
+    {
+        "label": "active",
+        "kind": 5,
+        "importPath": "Python.python_learning.Input_while",
+        "description": "Python.python_learning.Input_while",
+        "peekOfCode": "active = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
+        "detail": "Python.python_learning.Input_while",
+        "documentation": {}
+    },
+    {
+        "label": "bicycle",
+        "kind": 5,
+        "importPath": "Python.python_learning.List",
+        "description": "Python.python_learning.List",
+        "peekOfCode": "bicycle = ['Craft','Angle','Basker',\"Dwer\",\"Escer\",\"Franker\"]\nprint(bicycle)\nprint(bicycle[0].lower())\n# 修改第一个列表值\nbicycle[0] = \"Anncer\"\nprint(bicycle)\n# 增加一个列表值\nbicycle.append(\"Drasker\")\nbicycle.insert(1,\"Qunen\")\nprint(bicycle)",
+        "detail": "Python.python_learning.List",
+        "documentation": {}
+    },
+    {
+        "label": "bicycle[0]",
+        "kind": 5,
+        "importPath": "Python.python_learning.List",
+        "description": "Python.python_learning.List",
+        "peekOfCode": "bicycle[0] = \"Anncer\"\nprint(bicycle)\n# 增加一个列表值\nbicycle.append(\"Drasker\")\nbicycle.insert(1,\"Qunen\")\nprint(bicycle)\n# 排序\nprint(f\"原排序：{bicycle}\")\nprint(f\"临时排序: {sorted(bicycle,reverse = True)}\")\nprint(f\"原排列: {bicycle}\")",
+        "detail": "Python.python_learning.List",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Python.python_learning.List",
+        "description": "Python.python_learning.List",
+        "peekOfCode": "A = bicycle.pop(1)\nprint(A)\nprint(bicycle)\nbicycle.remove(\"Dwer\")\nprint(bicycle) \nbicycle.reverse()\nprint(f\"反转列表: {bicycle}\")",
+        "detail": "Python.python_learning.List",
+        "documentation": {}
+    },
+    {
+        "label": "magicians",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "magicians = [\"Alice\", \"David\", \"carolina\"]\n# 循环输出\nfor magician in magicians:\n  print(f\"{magician} 是个好魔术师！\") \n  print(f\"我期待你的下一次表演 {magician}\\n\")\nprint(\"感谢各位，这是一场精彩的表演！\")\n# 创建数字列表  \nnumbers = list(range(1,10,2))\nprint(numbers)\n# 创建一个1~10的平方的列表",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "numbers = list(range(1,10,2))\nprint(numbers)\n# 创建一个1~10的平方的列表\nnumbers = []\nfor i in range(11):\n  numbers.append(i**2)\nprint(numbers)\n# 简单统计计算\ndigits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "numbers = []\nfor i in range(11):\n  numbers.append(i**2)\nprint(numbers)\n# 简单统计计算\ndigits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "digits",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "digits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"min",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"max",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"sum",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制\nA = [1,2,3,4,5,6]",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "squares",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "squares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制\nA = [1,2,3,4,5,6]\nB = A[:]\nC = A",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "A = [1,2,3,4,5,6]\nB = A[:]\nC = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "B",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "B = A[:]\nC = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "C",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "C = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"B",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"C",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "circle",
+        "kind": 5,
+        "importPath": "Python.python_learning.Touple",
+        "description": "Python.python_learning.Touple",
+        "peekOfCode": "circle = (1,5)\nprint(f\"元组circle: {circle}\")\n# 4-13\nfoods = (\"rice\", \"meat\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)\n# foods[0] = \"Ham\"  报错\nfoods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
+        "detail": "Python.python_learning.Touple",
+        "documentation": {}
+    },
+    {
+        "label": "foods",
+        "kind": 5,
+        "importPath": "Python.python_learning.Touple",
+        "description": "Python.python_learning.Touple",
+        "peekOfCode": "foods = (\"rice\", \"meat\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)\n# foods[0] = \"Ham\"  报错\nfoods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
+        "detail": "Python.python_learning.Touple",
+        "documentation": {}
+    },
+    {
+        "label": "foods",
+        "kind": 5,
+        "importPath": "Python.python_learning.Touple",
+        "description": "Python.python_learning.Touple",
+        "peekOfCode": "foods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
+        "detail": "Python.python_learning.Touple",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0 = {'color': 'green', 'points': 5 }\nalien_0_color = alien_0['color']\nalien_0_point = alien_0['points']\nprint(f\"alien_0 color: {alien_0['color']}\")\nprint(f\"alien_0 point: {alien_0['points']}\")\n# 添加x，y坐标\nalien_0['x_position'] = 0\nalien_0[\"y_position\"] = 25\nprint(alien_0)\n# 修改字典中的值",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0_color",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0_color = alien_0['color']\nalien_0_point = alien_0['points']\nprint(f\"alien_0 color: {alien_0['color']}\")\nprint(f\"alien_0 point: {alien_0['points']}\")\n# 添加x，y坐标\nalien_0['x_position'] = 0\nalien_0[\"y_position\"] = 25\nprint(alien_0)\n# 修改字典中的值\nprint(f\"The alien is {alien_0['color']}\")",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0_point",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0_point = alien_0['points']\nprint(f\"alien_0 color: {alien_0['color']}\")\nprint(f\"alien_0 point: {alien_0['points']}\")\n# 添加x，y坐标\nalien_0['x_position'] = 0\nalien_0[\"y_position\"] = 25\nprint(alien_0)\n# 修改字典中的值\nprint(f\"The alien is {alien_0['color']}\")\nalien_0['color'] = \"red\"",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0['x_position']",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0['x_position'] = 0\nalien_0[\"y_position\"] = 25\nprint(alien_0)\n# 修改字典中的值\nprint(f\"The alien is {alien_0['color']}\")\nalien_0['color'] = \"red\"\nprint(f\"The alien is now {alien_0['color']}\")\n# 删除键值对\ndel alien_0['points']\nprint(alien_0)",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0[\"y_position\"]",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0[\"y_position\"] = 25\nprint(alien_0)\n# 修改字典中的值\nprint(f\"The alien is {alien_0['color']}\")\nalien_0['color'] = \"red\"\nprint(f\"The alien is now {alien_0['color']}\")\n# 删除键值对\ndel alien_0['points']\nprint(alien_0)\n# 多行键值对",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0['color']",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0['color'] = \"red\"\nprint(f\"The alien is now {alien_0['color']}\")\n# 删除键值对\ndel alien_0['points']\nprint(alien_0)\n# 多行键值对\nfavorite_languages = {\n  'yjm': 'C++',\n  'cl': 'C',\n  'xsy': \"C\",",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "favorite_languages",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "favorite_languages = {\n  'yjm': 'C++',\n  'cl': 'C',\n  'xsy': \"C\",\n  'wmh': 'python',\n  'lfd': 'java',\n  'gwc': 'java',\n  }\nprint(favorite_languages)\n# get()访问",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_0",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_0 = {'color': 'red', 'points':  5}\nalien_1 = {'color': 'green', 'points': 3}\nalien_2 = {'color': 'yellow', 'points': 1}\nalien = [alien_0,alien_1,alien_2]\nprint(alien)",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_1",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_1 = {'color': 'green', 'points': 3}\nalien_2 = {'color': 'yellow', 'points': 1}\nalien = [alien_0,alien_1,alien_2]\nprint(alien)",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien_2",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien_2 = {'color': 'yellow', 'points': 1}\nalien = [alien_0,alien_1,alien_2]\nprint(alien)",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "alien",
+        "kind": 5,
+        "importPath": "Python.python_learning.dict",
+        "description": "Python.python_learning.dict",
+        "peekOfCode": "alien = [alien_0,alien_1,alien_2]\nprint(alien)",
+        "detail": "Python.python_learning.dict",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "Python.python_learning.files_exceptions",
+        "description": "Python.python_learning.files_exceptions",
+        "peekOfCode": "numbers = [1,3,5,7,9]\nfilename = \"numbers.json\"\nwith open(filename,'w') as f:\n  json.dump(numbers,f)\nwith open(filename) as f:\n  nbs = json.load(f)\nprint(nbs)\n'''如果以前存储了用户名-->加载它'''\n'''否则，输入并存储'''\nfilename = 'username.json'",
+        "detail": "Python.python_learning.files_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "filename",
+        "kind": 5,
+        "importPath": "Python.python_learning.files_exceptions",
+        "description": "Python.python_learning.files_exceptions",
+        "peekOfCode": "filename = \"numbers.json\"\nwith open(filename,'w') as f:\n  json.dump(numbers,f)\nwith open(filename) as f:\n  nbs = json.load(f)\nprint(nbs)\n'''如果以前存储了用户名-->加载它'''\n'''否则，输入并存储'''\nfilename = 'username.json'\ntry:",
+        "detail": "Python.python_learning.files_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "filename",
+        "kind": 5,
+        "importPath": "Python.python_learning.files_exceptions",
+        "description": "Python.python_learning.files_exceptions",
+        "peekOfCode": "filename = 'username.json'\ntry:\n  with open(filename) as f:\n    username = json.load(f)\nexcept:\n  '''输入并存储'''\n  with open(filename,'w') as f:\n    username = input(\"输入用户名: \")\n    json.dump(username,f)",
+        "detail": "Python.python_learning.files_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "get_users",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def get_users(username):\n  '''显示简单的问候语'''\n  print(f\"Hello,{username}!\")\nget_users(\"John\") \n# 实参 \ndef describe_pet(animal_name, animal_type):\n  print(f'动物种类： {animal_type}')\n  print(f\"宠物名称： {animal_name}\")\ndescribe_pet(\"帕奇\", \"Dog\")\ndescribe_pet(animal_type= \"Mix\" , animal_name= \"Addy\")",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "describe_pet",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def describe_pet(animal_name, animal_type):\n  print(f'动物种类： {animal_type}')\n  print(f\"宠物名称： {animal_name}\")\ndescribe_pet(\"帕奇\", \"Dog\")\ndescribe_pet(animal_type= \"Mix\" , animal_name= \"Addy\")\n# 返回值\ndef get_fotmatted_name(first_name, last_name):\n  # 返回完整的姓名\n  return (first_name +\" \" + last_name).title()\nmusician = get_fotmatted_name(\"jimi\", last_name= \"hendrix\")",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "get_fotmatted_name",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def get_fotmatted_name(first_name, last_name):\n  # 返回完整的姓名\n  return (first_name +\" \" + last_name).title()\nmusician = get_fotmatted_name(\"jimi\", last_name= \"hendrix\")\nprint(musician) \n# 返回字典\ndef build_person(first_name, last_name, age):\n  full_name = f\"{first_name} {last_name}\"\n  person = {'name': full_name, 'age': age}\n  return person",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "build_person",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def build_person(first_name, last_name, age):\n  full_name = f\"{first_name} {last_name}\"\n  person = {'name': full_name, 'age': age}\n  return person\nmusician = build_person(\"jimi\", \"hendrix\", age = 25)\nprint(f\"musician类型：{type(musician)},  {musician}\")\n# 结合循环\nwhile True: # 无限循环\n  print(\"请输入姓名：（输入q停止）\")\n  f_name = input(\"请输入姓： \")",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "greet_users",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def greet_users(names):\n  '''向列表中的每位用户发送问候'''\n  for name in names:\n    print(f\"Hi, {name}!\")\nnames = ['Ammy','Bercer','Candy']\ngreet_users(names)\n# 修改列表\ndigits = [2,4,6,8,10]\nprint(f\"修改列表前： {digits}\")\ndef revise_List(L1):",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "revise_List",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def revise_List(L1):\n  for num in range(1,10,2):\n    digits.append(num)\nrevise_List(digits)\nprint(f\"修改列表后： {digits}\")\n# 结合使用位置实参和任意数量实参\ndef f1(first,last,*languages):\n  full_name = first + last\n  for language in languages:\n    print(f'{full_name}喜欢用{language}')",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "f1",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def f1(first,last,*languages):\n  full_name = first + last\n  for language in languages:\n    print(f'{full_name}喜欢用{language}')\nf1(\"W\",'AS',\"java\",'py','c')\n# 结合使用关键字实参和任意数量实参\ndef f2(first, last, **Dict):\n  full_name = first + last \n  Dict['name'] = full_name\n  return Dict",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "f2",
+        "kind": 2,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "def f2(first, last, **Dict):\n  full_name = first + last \n  Dict['name'] = full_name\n  return Dict\nPerson = f2(first='A',last=\"bc\",age=21, xp='bs')\nprint(Person)",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "musician",
+        "kind": 5,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "musician = get_fotmatted_name(\"jimi\", last_name= \"hendrix\")\nprint(musician) \n# 返回字典\ndef build_person(first_name, last_name, age):\n  full_name = f\"{first_name} {last_name}\"\n  person = {'name': full_name, 'age': age}\n  return person\nmusician = build_person(\"jimi\", \"hendrix\", age = 25)\nprint(f\"musician类型：{type(musician)},  {musician}\")\n# 结合循环",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "musician",
+        "kind": 5,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "musician = build_person(\"jimi\", \"hendrix\", age = 25)\nprint(f\"musician类型：{type(musician)},  {musician}\")\n# 结合循环\nwhile True: # 无限循环\n  print(\"请输入姓名：（输入q停止）\")\n  f_name = input(\"请输入姓： \")\n  if f_name == 'q':\n    break\n  l_name = input(\"请输入名： \")\n  if l_name == 'q':",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "names",
+        "kind": 5,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "names = ['Ammy','Bercer','Candy']\ngreet_users(names)\n# 修改列表\ndigits = [2,4,6,8,10]\nprint(f\"修改列表前： {digits}\")\ndef revise_List(L1):\n  for num in range(1,10,2):\n    digits.append(num)\nrevise_List(digits)\nprint(f\"修改列表后： {digits}\")",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "digits",
+        "kind": 5,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "digits = [2,4,6,8,10]\nprint(f\"修改列表前： {digits}\")\ndef revise_List(L1):\n  for num in range(1,10,2):\n    digits.append(num)\nrevise_List(digits)\nprint(f\"修改列表后： {digits}\")\n# 结合使用位置实参和任意数量实参\ndef f1(first,last,*languages):\n  full_name = first + last",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "Person",
+        "kind": 5,
+        "importPath": "Python.python_learning.function",
+        "description": "Python.python_learning.function",
+        "peekOfCode": "Person = f2(first='A',last=\"bc\",age=21, xp='bs')\nprint(Person)",
+        "detail": "Python.python_learning.function",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "message = \"456七八九\"\nprint(message)\nmessage = 'she says:\"I love python!\"'\nprint(message)\nprint(\"每个单词首字母大写(title()函数): \" + message.title())\nprint(\"小写转大写(upper()函数): \" + message.upper())\nprint(\"大写转小写(lower()函数): \" + message.lower())\n# f\" {变量}  \"\nA = \"许思毅\"\nB = \"大傻逼\"",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "message = 'she says:\"I love python!\"'\nprint(message)\nprint(\"每个单词首字母大写(title()函数): \" + message.title())\nprint(\"小写转大写(upper()函数): \" + message.upper())\nprint(\"大写转小写(lower()函数): \" + message.lower())\n# f\" {变量}  \"\nA = \"许思毅\"\nB = \"大傻逼\"\nmessage = f\"hello, {B}{A}!\"\nprint(message)",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "A = \"许思毅\"\nB = \"大傻逼\"\nmessage = f\"hello, {B}{A}!\"\nprint(message)\nprint(f\"{A} {B}!\")\nprint(f\"hello, {B}{A}!\")\nmessage = \"hello\\t\\n {}{}!\".format(A,B)\nprint(message)\nmessage = \"   许思毅傻逼 \\n    \"\nprint(f\"不去掉空格长度: {len(message)}\")",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "B",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "B = \"大傻逼\"\nmessage = f\"hello, {B}{A}!\"\nprint(message)\nprint(f\"{A} {B}!\")\nprint(f\"hello, {B}{A}!\")\nmessage = \"hello\\t\\n {}{}!\".format(A,B)\nprint(message)\nmessage = \"   许思毅傻逼 \\n    \"\nprint(f\"不去掉空格长度: {len(message)}\")\nprint(f\"去掉结尾空格长度: {len(message.rstrip())}\")",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "message = f\"hello, {B}{A}!\"\nprint(message)\nprint(f\"{A} {B}!\")\nprint(f\"hello, {B}{A}!\")\nmessage = \"hello\\t\\n {}{}!\".format(A,B)\nprint(message)\nmessage = \"   许思毅傻逼 \\n    \"\nprint(f\"不去掉空格长度: {len(message)}\")\nprint(f\"去掉结尾空格长度: {len(message.rstrip())}\")\nprint(f\"去掉开头空格长度: {len(message.lstrip())}\")",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "message = \"hello\\t\\n {}{}!\".format(A,B)\nprint(message)\nmessage = \"   许思毅傻逼 \\n    \"\nprint(f\"不去掉空格长度: {len(message)}\")\nprint(f\"去掉结尾空格长度: {len(message.rstrip())}\")\nprint(f\"去掉开头空格长度: {len(message.lstrip())}\")\nprint(f\"去掉两头空格长度: {len(message.strip())}\")\nA = \"xusiyi\"\nprint(f\"{A},大傻逼！\")\nprint(f\"{A.upper()},大傻逼！\")",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "message = \"   许思毅傻逼 \\n    \"\nprint(f\"不去掉空格长度: {len(message)}\")\nprint(f\"去掉结尾空格长度: {len(message.rstrip())}\")\nprint(f\"去掉开头空格长度: {len(message.lstrip())}\")\nprint(f\"去掉两头空格长度: {len(message.strip())}\")\nA = \"xusiyi\"\nprint(f\"{A},大傻逼！\")\nprint(f\"{A.upper()},大傻逼！\")\nprint(f\"{A.lower()},大傻逼！\")\nprint(f\"{A.title()},大傻逼！\")",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Python.python_learning.hello_world",
+        "description": "Python.python_learning.hello_world",
+        "peekOfCode": "A = \"xusiyi\"\nprint(f\"{A},大傻逼！\")\nprint(f\"{A.upper()},大傻逼！\")\nprint(f\"{A.lower()},大傻逼！\")\nprint(f\"{A.title()},大傻逼！\")",
+        "detail": "Python.python_learning.hello_world",
+        "documentation": {}
+    },
+    {
+        "label": "cars",
+        "kind": 5,
+        "importPath": "Python.python_learning.if",
+        "description": "Python.python_learning.if",
+        "peekOfCode": "cars = [\"audi\", \"bmw\", 'sybaru', 'toyora']\nfor car in cars :\n  if car != \"bmw\":\n    print(car.title())\n  else :\n    print(car.upper())\nL1 = [1,2,3,4,5,6,7,8]\nif 10 in L1 :\n  if_10 = True\nelse :",
+        "detail": "Python.python_learning.if",
+        "documentation": {}
+    },
+    {
+        "label": "L1",
+        "kind": 5,
+        "importPath": "Python.python_learning.if",
+        "description": "Python.python_learning.if",
+        "peekOfCode": "L1 = [1,2,3,4,5,6,7,8]\nif 10 in L1 :\n  if_10 = True\nelse :\n  if_10 = False\nif 1 in L1 :\n  if_1 = True\nelse :\n  if_1 = False\nprint(f\"if_10: {if_10}\")",
+        "detail": "Python.python_learning.if",
+        "documentation": {}
+    },
+    {
+        "label": "age",
+        "kind": 5,
+        "importPath": "Python.python_learning.if",
+        "description": "Python.python_learning.if",
+        "peekOfCode": "age = 10\nif age < 4 :\n  print(\"4岁一下免费！\")\nelif age < 18 :\n  print(\"4~18岁收费25美元！\")\nelse :\n  print(\"18岁(含以上)收费40美元！\")\nL2 = L1[:] # 复制L1\nif L2 :\n  print(\"L2非空\")",
+        "detail": "Python.python_learning.if",
+        "documentation": {}
+    },
+    {
+        "label": "L2",
+        "kind": 5,
+        "importPath": "Python.python_learning.if",
+        "description": "Python.python_learning.if",
+        "peekOfCode": "L2 = L1[:] # 复制L1\nif L2 :\n  print(\"L2非空\")\nelse :\n  print(\"L2为空\")",
+        "detail": "Python.python_learning.if",
+        "documentation": {}
+    },
+    {
+        "label": "get_fotmatted_name",
+        "kind": 2,
+        "importPath": "Python.python_learning.name",
+        "description": "Python.python_learning.name",
+        "peekOfCode": "def get_fotmatted_name(first_name, last_name, middle=''):\n  # 返回完整的姓名\n  if middle:\n    return (first_name +\" \" + middle + \" \" + last_name).title()\n  else:\n    return (first_name +\" \" + last_name).title()\nusername = get_fotmatted_name('RC','Jn')\nif __name__ == '__main__':\n  print(username)",
+        "detail": "Python.python_learning.name",
+        "documentation": {}
+    },
+    {
+        "label": "username",
+        "kind": 5,
+        "importPath": "Python.python_learning.name",
+        "description": "Python.python_learning.name",
+        "peekOfCode": "username = get_fotmatted_name('RC','Jn')\nif __name__ == '__main__':\n  print(username)",
+        "detail": "Python.python_learning.name",
+        "documentation": {}
+    },
+    {
+        "label": "MOST_LOVE",
+        "kind": 5,
+        "importPath": "Python.python_learning.number",
+        "description": "Python.python_learning.number",
+        "peekOfCode": "MOST_LOVE = 3\nprint(f\"最喜欢的数 {MOST_LOVE}\")",
+        "detail": "Python.python_learning.number",
+        "documentation": {}
+    },
+    {
+        "label": "AnonymousSurvey",
+        "kind": 6,
+        "importPath": "Python.python_learning.survey",
+        "description": "Python.python_learning.survey",
+        "peekOfCode": "class AnonymousSurvey:\n  '''收集匿名调查问卷的答案'''\n  def __init__(self,question):\n    '''存储一个问题，并未存储答案做准备'''\n    self.question = question\n    self.response = []\n  def show_question(self):\n    '''显示调查问卷'''\n    print(self.question)\n  def store_response(self,new_response):",
+        "detail": "Python.python_learning.survey",
+        "documentation": {}
+    },
+    {
+        "label": "name_test",
+        "kind": 6,
+        "importPath": "Python.python_learning.test",
+        "description": "Python.python_learning.test",
+        "peekOfCode": "class name_test(unittest.TestCase):\n  '''测试函数'''\n  def test_name(self):\n    username1 = get_fotmatted_name('RC','Jn')\n    self.assertEqual(username1,'RC Jn'.title())\n  def test_middle_name(self):\n    '''测试带有中间名字'''\n    username2 = get_fotmatted_name('RC','Jn',middle='Rbq')\n    self.assertEqual(username2,'RC Rbq Jn'.title())\n# 测试AnonymousSurvey类",
+        "detail": "Python.python_learning.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestAnonymousSurvey",
+        "kind": 6,
+        "importPath": "Python.python_learning.test",
+        "description": "Python.python_learning.test",
+        "peekOfCode": "class TestAnonymousSurvey(unittest.TestCase):\n  '''针对AnonymousSurvey类的测试'''\n  def test_store_response(self):\n    '''测试单个答案会被妥善的存储'''\n    question = \"What language did you forst learn to speak?\"\n    my_survey = AnonymousSurvey(question)\n    response = \"Chinese\"\n    my_survey.store_response(response)\n    self.assertIn(\"Chinese\",my_survey.response)\n  def test_store_responses(self):",
+        "detail": "Python.python_learning.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestAnonymousSurvey2",
+        "kind": 6,
+        "importPath": "Python.python_learning.test",
+        "description": "Python.python_learning.test",
+        "peekOfCode": "class TestAnonymousSurvey2(unittest.TestCase):\n  '''针对AnonymousSurvey类的测试'''\n  def setUp(self):\n    '''创建一个调查对象和一组答案 供使用的测试方法使用'''\n    question = \"What language did you forst learn to speak?\"\n    self.my_survey = AnonymousSurvey(question)\n    self.responses = ['C嘉嘉', '`~~`','Chinese']\n  def test_store_response(self):\n    '''测试单个答案会被妥善的存储'''\n    self.my_survey.store_response(self.responses[0])",
+        "detail": "Python.python_learning.test",
+        "documentation": {}
+    }
+]
