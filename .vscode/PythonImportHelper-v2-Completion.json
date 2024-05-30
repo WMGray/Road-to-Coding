@@ -25,14 +25,6 @@
         "documentation": {}
     },
     {
-        "label": "M",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "A",
         "importPath": "re",
         "description": "re",
@@ -42,6 +34,14 @@
     },
     {
         "label": "L",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "M",
         "importPath": "re",
         "description": "re",
         "isExtraImport": true,
@@ -228,204 +228,6 @@
         "description": "Python.python_learning.Class",
         "peekOfCode": "my_tesla = ElectricCar('tesla','model s',2020)\nmy_tesla.get_description()\nmy_tesla.describe_battery_size()",
         "detail": "Python.python_learning.Class",
-        "documentation": {}
-    },
-    {
-        "label": "name",
-        "kind": 5,
-        "importPath": "Python.python_learning.Input_while",
-        "description": "Python.python_learning.Input_while",
-        "peekOfCode": "name = input(\"输入一个名字: \" )\nprint(f'name = {name}')\n# while循环\nactive = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
-        "detail": "Python.python_learning.Input_while",
-        "documentation": {}
-    },
-    {
-        "label": "print(f'name",
-        "kind": 5,
-        "importPath": "Python.python_learning.Input_while",
-        "description": "Python.python_learning.Input_while",
-        "peekOfCode": "print(f'name = {name}')\n# while循环\nactive = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
-        "detail": "Python.python_learning.Input_while",
-        "documentation": {}
-    },
-    {
-        "label": "active",
-        "kind": 5,
-        "importPath": "Python.python_learning.Input_while",
-        "description": "Python.python_learning.Input_while",
-        "peekOfCode": "active = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
-        "detail": "Python.python_learning.Input_while",
-        "documentation": {}
-    },
-    {
-        "label": "bicycle",
-        "kind": 5,
-        "importPath": "Python.python_learning.List",
-        "description": "Python.python_learning.List",
-        "peekOfCode": "bicycle = ['Craft','Angle','Basker',\"Dwer\",\"Escer\",\"Franker\"]\nprint(bicycle)\nprint(bicycle[0].lower())\n# 修改第一个列表值\nbicycle[0] = \"Anncer\"\nprint(bicycle)\n# 增加一个列表值\nbicycle.append(\"Drasker\")\nbicycle.insert(1,\"Qunen\")\nprint(bicycle)",
-        "detail": "Python.python_learning.List",
-        "documentation": {}
-    },
-    {
-        "label": "bicycle[0]",
-        "kind": 5,
-        "importPath": "Python.python_learning.List",
-        "description": "Python.python_learning.List",
-        "peekOfCode": "bicycle[0] = \"Anncer\"\nprint(bicycle)\n# 增加一个列表值\nbicycle.append(\"Drasker\")\nbicycle.insert(1,\"Qunen\")\nprint(bicycle)\n# 排序\nprint(f\"原排序：{bicycle}\")\nprint(f\"临时排序: {sorted(bicycle,reverse = True)}\")\nprint(f\"原排列: {bicycle}\")",
-        "detail": "Python.python_learning.List",
-        "documentation": {}
-    },
-    {
-        "label": "A",
-        "kind": 5,
-        "importPath": "Python.python_learning.List",
-        "description": "Python.python_learning.List",
-        "peekOfCode": "A = bicycle.pop(1)\nprint(A)\nprint(bicycle)\nbicycle.remove(\"Dwer\")\nprint(bicycle) \nbicycle.reverse()\nprint(f\"反转列表: {bicycle}\")",
-        "detail": "Python.python_learning.List",
-        "documentation": {}
-    },
-    {
-        "label": "magicians",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "magicians = [\"Alice\", \"David\", \"carolina\"]\n# 循环输出\nfor magician in magicians:\n  print(f\"{magician} 是个好魔术师！\") \n  print(f\"我期待你的下一次表演 {magician}\\n\")\nprint(\"感谢各位，这是一场精彩的表演！\")\n# 创建数字列表  \nnumbers = list(range(1,10,2))\nprint(numbers)\n# 创建一个1~10的平方的列表",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "numbers",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "numbers = list(range(1,10,2))\nprint(numbers)\n# 创建一个1~10的平方的列表\nnumbers = []\nfor i in range(11):\n  numbers.append(i**2)\nprint(numbers)\n# 简单统计计算\ndigits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "numbers",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "numbers = []\nfor i in range(11):\n  numbers.append(i**2)\nprint(numbers)\n# 简单统计计算\ndigits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "digits",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "digits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "print(f\"min",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "print(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "print(f\"max",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "print(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "print(f\"sum",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "print(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制\nA = [1,2,3,4,5,6]",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "squares",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "squares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制\nA = [1,2,3,4,5,6]\nB = A[:]\nC = A",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "A",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "A = [1,2,3,4,5,6]\nB = A[:]\nC = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "B",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "B = A[:]\nC = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "C",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "C = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "print(f\"B",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "print(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "print(f\"C",
-        "kind": 5,
-        "importPath": "Python.python_learning.List_Operate",
-        "description": "Python.python_learning.List_Operate",
-        "peekOfCode": "print(f\"C = A {C}\")",
-        "detail": "Python.python_learning.List_Operate",
-        "documentation": {}
-    },
-    {
-        "label": "circle",
-        "kind": 5,
-        "importPath": "Python.python_learning.Touple",
-        "description": "Python.python_learning.Touple",
-        "peekOfCode": "circle = (1,5)\nprint(f\"元组circle: {circle}\")\n# 4-13\nfoods = (\"rice\", \"meat\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)\n# foods[0] = \"Ham\"  报错\nfoods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
-        "detail": "Python.python_learning.Touple",
-        "documentation": {}
-    },
-    {
-        "label": "foods",
-        "kind": 5,
-        "importPath": "Python.python_learning.Touple",
-        "description": "Python.python_learning.Touple",
-        "peekOfCode": "foods = (\"rice\", \"meat\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)\n# foods[0] = \"Ham\"  报错\nfoods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
-        "detail": "Python.python_learning.Touple",
-        "documentation": {}
-    },
-    {
-        "label": "foods",
-        "kind": 5,
-        "importPath": "Python.python_learning.Touple",
-        "description": "Python.python_learning.Touple",
-        "peekOfCode": "foods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
-        "detail": "Python.python_learning.Touple",
         "documentation": {}
     },
     {
@@ -780,6 +582,177 @@
         "documentation": {}
     },
     {
+        "label": "name",
+        "kind": 5,
+        "importPath": "Python.python_learning.Input_while",
+        "description": "Python.python_learning.Input_while",
+        "peekOfCode": "name = input(\"输入一个名字: \" )\nprint(f'name = {name}')\n# while循环\nactive = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
+        "detail": "Python.python_learning.Input_while",
+        "documentation": {}
+    },
+    {
+        "label": "print(f'name",
+        "kind": 5,
+        "importPath": "Python.python_learning.Input_while",
+        "description": "Python.python_learning.Input_while",
+        "peekOfCode": "print(f'name = {name}')\n# while循环\nactive = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
+        "detail": "Python.python_learning.Input_while",
+        "documentation": {}
+    },
+    {
+        "label": "active",
+        "kind": 5,
+        "importPath": "Python.python_learning.Input_while",
+        "description": "Python.python_learning.Input_while",
+        "peekOfCode": "active = True\nwhile active :\n  message = input(\"输入要打印的字符串（quit结束）： \")\n  if message != 'quit' :\n    print(message)\n  else :\n    active = False",
+        "detail": "Python.python_learning.Input_while",
+        "documentation": {}
+    },
+    {
+        "label": "bicycle",
+        "kind": 5,
+        "importPath": "Python.python_learning.List",
+        "description": "Python.python_learning.List",
+        "peekOfCode": "bicycle = ['Craft','Angle','Basker',\"Dwer\",\"Escer\",\"Franker\"]\nprint(bicycle)\nprint(bicycle[0].lower())\n# 修改第一个列表值\nbicycle[0] = \"Anncer\"\nprint(bicycle)\n# 增加一个列表值\nbicycle.append(\"Drasker\")\nbicycle.insert(1,\"Qunen\")\nprint(bicycle)",
+        "detail": "Python.python_learning.List",
+        "documentation": {}
+    },
+    {
+        "label": "bicycle[0]",
+        "kind": 5,
+        "importPath": "Python.python_learning.List",
+        "description": "Python.python_learning.List",
+        "peekOfCode": "bicycle[0] = \"Anncer\"\nprint(bicycle)\n# 增加一个列表值\nbicycle.append(\"Drasker\")\nbicycle.insert(1,\"Qunen\")\nprint(bicycle)\n# 排序\nprint(f\"原排序：{bicycle}\")\nprint(f\"临时排序: {sorted(bicycle,reverse = True)}\")\nprint(f\"原排列: {bicycle}\")",
+        "detail": "Python.python_learning.List",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Python.python_learning.List",
+        "description": "Python.python_learning.List",
+        "peekOfCode": "A = bicycle.pop(1)\nprint(A)\nprint(bicycle)\nbicycle.remove(\"Dwer\")\nprint(bicycle) \nbicycle.reverse()\nprint(f\"反转列表: {bicycle}\")",
+        "detail": "Python.python_learning.List",
+        "documentation": {}
+    },
+    {
+        "label": "magicians",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "magicians = [\"Alice\", \"David\", \"carolina\"]\n# 循环输出\nfor magician in magicians:\n  print(f\"{magician} 是个好魔术师！\") \n  print(f\"我期待你的下一次表演 {magician}\\n\")\nprint(\"感谢各位，这是一场精彩的表演！\")\n# 创建数字列表  \nnumbers = list(range(1,10,2))\nprint(numbers)\n# 创建一个1~10的平方的列表",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "numbers = list(range(1,10,2))\nprint(numbers)\n# 创建一个1~10的平方的列表\nnumbers = []\nfor i in range(11):\n  numbers.append(i**2)\nprint(numbers)\n# 简单统计计算\ndigits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "numbers = []\nfor i in range(11):\n  numbers.append(i**2)\nprint(numbers)\n# 简单统计计算\ndigits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "digits",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "digits = [1,2,5,3,6,4,5,2,22,0,13,556,10,-25]\nprint(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"min",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"min = {min(digits)}\")\nprint(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"max",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"max = {max(digits)}\")\nprint(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"sum",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"sum = {sum(digits)}\")\n# 列表解析 求立方\nsquares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制\nA = [1,2,3,4,5,6]",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "squares",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "squares = [value**3  for value in range(11)]\nprint(f\"立方解析： {squares}\")\nprint(f\"输出第2到第5个元素： {squares[1:6:2]}\")\n# 遍历切片\nfor num in numbers[-5:]:\n  print(num)\n# 列表复制\nA = [1,2,3,4,5,6]\nB = A[:]\nC = A",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "A = [1,2,3,4,5,6]\nB = A[:]\nC = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "B",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "B = A[:]\nC = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "C",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "C = A\nA.append(7)\nB.append(8)\nC.append(9)\nprint(f\"A  {A}\")\nprint(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"B",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"B = A[:] {B}\")\nprint(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"C",
+        "kind": 5,
+        "importPath": "Python.python_learning.List_Operate",
+        "description": "Python.python_learning.List_Operate",
+        "peekOfCode": "print(f\"C = A {C}\")",
+        "detail": "Python.python_learning.List_Operate",
+        "documentation": {}
+    },
+    {
         "label": "get_fotmatted_name",
         "kind": 2,
         "importPath": "Python.python_learning.name",
@@ -840,6 +813,33 @@
         "description": "Python.python_learning.test",
         "peekOfCode": "class TestAnonymousSurvey2(unittest.TestCase):\n  '''针对AnonymousSurvey类的测试'''\n  def setUp(self):\n    '''创建一个调查对象和一组答案 供使用的测试方法使用'''\n    question = \"What language did you forst learn to speak?\"\n    self.my_survey = AnonymousSurvey(question)\n    self.responses = ['C嘉嘉', '`~~`','Chinese']\n  def test_store_response(self):\n    '''测试单个答案会被妥善的存储'''\n    self.my_survey.store_response(self.responses[0])",
         "detail": "Python.python_learning.test",
+        "documentation": {}
+    },
+    {
+        "label": "circle",
+        "kind": 5,
+        "importPath": "Python.python_learning.Touple",
+        "description": "Python.python_learning.Touple",
+        "peekOfCode": "circle = (1,5)\nprint(f\"元组circle: {circle}\")\n# 4-13\nfoods = (\"rice\", \"meat\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)\n# foods[0] = \"Ham\"  报错\nfoods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
+        "detail": "Python.python_learning.Touple",
+        "documentation": {}
+    },
+    {
+        "label": "foods",
+        "kind": 5,
+        "importPath": "Python.python_learning.Touple",
+        "description": "Python.python_learning.Touple",
+        "peekOfCode": "foods = (\"rice\", \"meat\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)\n# foods[0] = \"Ham\"  报错\nfoods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
+        "detail": "Python.python_learning.Touple",
+        "documentation": {}
+    },
+    {
+        "label": "foods",
+        "kind": 5,
+        "importPath": "Python.python_learning.Touple",
+        "description": "Python.python_learning.Touple",
+        "peekOfCode": "foods = (\"Ham\", \"carrot\", \"bitter\", \"fish\", 'egg')\nfor food in foods :\n  print(food)",
+        "detail": "Python.python_learning.Touple",
         "documentation": {}
     }
 ]
